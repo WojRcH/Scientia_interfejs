@@ -1,6 +1,5 @@
 # Prototyp aplikacju do wypożyczeń sprzętu w ramach koła naukowego Scienta Ingenium
 
-strona koła: http://knsi.ue.katowice.pl/mainPage/
 Autorzy:
 - Wojtek Kochański - Przygotowanie Interfejsu
 - Szymon Pawełek - Projekt bazy danych
