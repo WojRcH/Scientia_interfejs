@@ -21,3 +21,26 @@ C:\Users\W\source\repos\Scientia_interfejs_alpha\Scientia_interfejs_alpha\obj\De
 C:\Users\W\source\repos\Scientia_interfejs_alpha\Scientia_interfejs_alpha\obj\Debug\Win_Edyt_Zas.g.cs
 C:\Users\W\source\repos\Scientia_interfejs_alpha\Scientia_interfejs_alpha\obj\Debug\Wind_Edyt_Czl.baml
 C:\Users\W\source\repos\Scientia_interfejs_alpha\Scientia_interfejs_alpha\obj\Debug\Win_Edyt_Zas.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\bin\Debug\Scientia_interfejs_alpha.exe.config
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\bin\Debug\Scientia_interfejs_alpha.exe
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\bin\Debug\Scientia_interfejs_alpha.pdb
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.csprojResolveAssemblyReference.cache
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\LogAdmin.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\MainWindow.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\PanelAdmin.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Wind_Edyt_Czl.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Win_Edyt_Zas.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\App.g.cs
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha_MarkupCompile.cache
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha_MarkupCompile.lref
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\LogAdmin.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\MainWindow.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\PanelAdmin.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Wind_Edyt_Czl.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Win_Edyt_Zas.baml
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.g.resources
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.Properties.Resources.resources
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.csproj.GenerateResource.Cache
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.csproj.CoreCompileInputs.cache
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.exe
+g:\Na git huba\Scientia_interfejs\Scientia_interfejs_alpha\obj\Debug\Scientia_interfejs_alpha.pdb

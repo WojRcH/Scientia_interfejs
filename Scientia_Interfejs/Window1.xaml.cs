@@ -41,7 +41,7 @@ namespace Scientia_Interfejs
         {
             SqlConnectionStringBuilder pol = new SqlConnectionStringBuilder();                                  ////model bezpołączneiowy
             pol.DataSource = "";
-            pol.InitialCatalog = "Ewidencja_SI";
+            pol.InitialCatalog = @"DESKTOP-L0C1C7J\SQLEXPRESS";
             pol.IntegratedSecurity = true;
 
             SqlConnection con = new SqlConnection(pol.ConnectionString);
