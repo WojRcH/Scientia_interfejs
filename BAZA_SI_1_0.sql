@@ -38,14 +38,15 @@ Select * from Zasoby
 Create table Wypozyczenia(
 ID_wypozyczenia int not null primary key IDENTITY(1,1),
 ID_osoby smallint not null foreign key references Osoby(ID_osoby),
-ID_zasoby smallint not null foreign key references Zasoby(ID_zasoby),
+ID_zasoby smallint not null foreign key references Zasoby(ID_zasobu),
 Data_wypozyczenia date not null,
-Data_zwrot date --przewidywana
+Data_zwrot date, --przewidywana
+aktualne bit --pokazuje czy dane s¹ aktualne czy historyczne
 )
-Insert into Wypozyczenia values(1,1,'2017-02-22','2017-03-22')
+Insert into Wypozyczenia values(1,1,'2017-02-22','2017-03-22',0)
 
 Select * from Wypozyczenia
 
-Select * from Osoby inner join Wypozyczenia ON Osoby.ID_osoby=Wypozyczenia.ID_osoby inner join Zasoby ON Wypozyczenia.ID_zasoby=Zasoby.ID_zasoby
+Select * from Osoby inner join Wypozyczenia ON Osoby.ID_osoby=Wypozyczenia.ID_osoby inner join Zasoby ON Wypozyczenia.ID_zasoby=Zasoby.ID_zasobu
 
 

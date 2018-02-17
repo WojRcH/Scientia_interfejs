@@ -1,0 +1,76 @@
+﻿<Window x:Class="Scientia_Interfejs.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scientia_Interfejs"
+        mc:Ignorable="d"
+        Title="Ewidencja Scientia Ingenium" Height="560.163" Width="791.004" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Wypożycz">
+                <Grid Margin="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Grid.Row="0" Content="Wybierz datę zwrotu" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30"/>
+                    <Calendar x:Name="kalendarz" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Stretch"/>
+                    <Button Content="WYPOŻYCZ" Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
+                    <ListView Name="livwyp" Grid.Column="0" Grid.RowSpan="4"  SelectedValue="{Binding id}" SelectedValuePath="id">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Nazwa" Width="100" DisplayMemberBinding="{Binding nazwa}"/>
+                                <GridViewColumn Header="Stan Techniczny" Width="120" DisplayMemberBinding="{Binding stan}"/>
+                                <GridViewColumn Header="Opis" Width="130" DisplayMemberBinding="{Binding opis}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Oddaj">
+                <Grid Margin="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="ODDAJ" Grid.Column="1" Grid.Row="3" Click="Button2_Click"/>
+                    <ListView Name="livodd" Grid.Column="0" Grid.RowSpan="4" SelectedValue="{Binding id}" SelectedValuePath="id">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Nazwa" Width="150" DisplayMemberBinding="{Binding nazwa}"/>
+                                <GridViewColumn Header="Stan Techniczny" Width="200" DisplayMemberBinding="{Binding stan}"/>
+                                <GridViewColumn Header="Opis" Width="200" DisplayMemberBinding="{Binding opis}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Historia">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="91*"/>
+                        <ColumnDefinition Width="682*"/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

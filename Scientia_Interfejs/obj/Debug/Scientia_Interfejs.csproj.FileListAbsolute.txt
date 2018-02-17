@@ -1,0 +1,33 @@
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.exe.config
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.csprojResolveAssemblyReference.cache
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\MainWindow.g.cs
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\App.g.cs
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs_MarkupCompile.cache
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs_MarkupCompile.lref
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.exe
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.pdb
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\MainWindow.baml
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.g.resources
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.Properties.Resources.resources
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.csproj.GenerateResource.Cache
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.exe
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.pdb
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Window1.g.cs
+c:\users\wojrch\documents\visual studio 2015\Projects\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Window1.baml
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.exe.config
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.exe
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\bin\Debug\Scientia_Interfejs.pdb
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.csprojResolveAssemblyReference.cache
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\MainWindow.g.cs
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Window1.g.cs
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\App.g.cs
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs_MarkupCompile.cache
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs_MarkupCompile.lref
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\MainWindow.baml
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Window1.baml
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.g.resources
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.Properties.Resources.resources
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.csproj.GenerateResource.Cache
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.csproj.CoreCompileInputs.cache
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.exe
+C:\Users\XXX\Desktop\Nowy folder\Scientia_Interfejs\Scientia_Interfejs\obj\Debug\Scientia_Interfejs.pdb
