@@ -17,7 +17,7 @@ Opis nvarchar(200),
 Czy_aktywny bit not null --czy aktualnie dzia³a w kole
 )
 
-insert into Osoby values('Wojtek','Kochañski',null,'opiekun','wojtus','haslo123','2018-12-13','231312','3213"@dwad.pl','dwawdaddhfwjh',1)
+insert into Osoby values('Wojtek','Kochañski',null,'admin','wojtus','haslo123','2018-12-13','231312','3213"@dwad.pl','dwawdaddhfwjh',1)
 
 Select * from Osoby
 
@@ -31,14 +31,14 @@ Stan_techniczny nvarchar(100),
 Czy_wypozyczalny bit not null,--zepsuty,sprawny,za drogi itp.
 Status_wypozyczenia bit not null
 )
-Insert into Zasoby values('Laptop Kasi','super szybki mega super','','sprawny',1,0)
+Insert into Zasoby values('Laptop Kasi','','super szybki mega super','Laptopy i tablety','sprawny',1,0)
 
 Select * from Zasoby
 
 Create table Wypozyczenia(
 ID_wypozyczenia int not null primary key IDENTITY(1,1),
 ID_osoby smallint not null foreign key references Osoby(ID_osoby),
-ID_zasoby smallint not null foreign key references Zasoby(ID_zasobu),
+ID_zasobu smallint not null foreign key references Zasoby(ID_zasobu),
 Data_wypozyczenia date not null,
 Data_zwrot date, --przewidywana
 aktualne bit --pokazuje czy dane s¹ aktualne czy historyczne
@@ -47,6 +47,6 @@ Insert into Wypozyczenia values(1,1,'2017-02-22','2017-03-22',0)
 
 Select * from Wypozyczenia
 
-Select * from Osoby inner join Wypozyczenia ON Osoby.ID_osoby=Wypozyczenia.ID_osoby inner join Zasoby ON Wypozyczenia.ID_zasoby=Zasoby.ID_zasobu
+Select * from Osoby inner join Wypozyczenia ON Osoby.ID_osoby=Wypozyczenia.ID_osoby inner join Zasoby ON Wypozyczenia.ID_zasobu=Zasoby.ID_zasobu
 
 

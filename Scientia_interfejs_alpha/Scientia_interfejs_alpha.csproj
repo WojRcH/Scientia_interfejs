@@ -121,5 +121,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\plak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\back.png" />
+    <Resource Include="image\close.png" />
+    <Resource Include="image\knsi.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

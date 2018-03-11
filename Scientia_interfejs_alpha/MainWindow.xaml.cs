@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Scientia_interfejs_alpha
 {
@@ -21,7 +23,12 @@ namespace Scientia_interfejs_alpha
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        DataSet ds = new DataSet();
+        SqlDataAdapter adap = new SqlDataAdapter();
+        SqlConnection con;
+
+
+
         public MainWindow()
         {
             InitializeComponent();           
@@ -39,9 +46,9 @@ namespace Scientia_interfejs_alpha
 
                 public string Stan { get; set; }
 
-                public string Czywypozyczalny { get; set; }
+                public bool Czywypozyczalny { get; set; }
 
-                public string Czywypozyczony { get; set; }
+                public bool Czywypozyczony { get; set; }
 
             //public string Details
             //{
@@ -94,31 +101,101 @@ namespace Scientia_interfejs_alpha
 
         private void CBfiltr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch(CBfiltr.Text)
+          
+
+            string text = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
+
+            if (text=="wszystko")
             {
-                case "Komórka":
-                   
-                    
-                    
-                    break;
-                case "Telefon":
-                    
-                    break;
-                default:
-                    
-                    break;
+                var x = from z in ds.Tables["Zasoby"].AsEnumerable()                                            
+                             select new Sprzet
+                            {
+                                Id = z.Field<Int16>("id_zasobu"),
+                                Nazwa = z.Field<string>("Nazwa"),
+                                Stan = z.Field<string>("Stan_techniczny"),
+                                Opis = z.Field<string>("Opis"),
+                                Kategoria = z.Field<string>("Kategoria"),
+                                Czywypozyczalny = z.Field<bool>("Czy_wypozyczalny"),
+                                Czywypozyczony = z.Field<bool>("Status_wypozyczenia")
+
+                            };
+                dgsprzet.ItemsSource = x;
+            }
+            else
+            {
+                var x = from z in ds.Tables["Zasoby"].AsEnumerable()                         
+                        where z.Field<string>("Kategoria") == text
+                             select new Sprzet
+                             {
+                                 Id = z.Field<Int16>("id_zasobu"),
+                                 Nazwa = z.Field<string>("Nazwa"),
+                                 Stan = z.Field<string>("Stan_techniczny"),
+                                 Opis = z.Field<string>("Opis"),
+                                 Kategoria = z.Field<string>("Kategoria"),
+                                 Czywypozyczalny = z.Field<bool>("Czy_wypozyczalny"),
+                                 Czywypozyczony = z.Field<bool>("Status_wypozyczenia")
+
+                             };
+                dgsprzet.ItemsSource = x;
+            }
+
+            
+                 
+        } //filtrowanie listy sprzętu
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)                                    //połączenie z baza
+        {
+            SqlConnectionStringBuilder pol = new SqlConnectionStringBuilder();                                  
+            pol.DataSource = "";
+            pol.InitialCatalog = "Ewidencja_SI";
+            pol.IntegratedSecurity = true;
+
+            con = new SqlConnection(pol.ConnectionString);
+
+            odswiez();
+           
+        }
+
+        private void odswiez()
+        {
+            try
+            {                                                                                               //tworzenie lub odwieza tabel w datasecie
+
+                string zapytanie2 = "SELECT * FROM Zasoby";
+                adap = new SqlDataAdapter(zapytanie2, con);                                   
+                adap.FillSchema(ds, SchemaType.Source, "Zasoby");
+                adap.Fill(ds, "Zasoby");
+
+
 
 
             }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Błąd");
+            }
+            
+
+            var wszystko = from z in ds.Tables["Zasoby"].AsEnumerable()
+                           select new Sprzet
+                           {
+                               Id = z.Field<Int16>("id_zasobu"),
+                               Nazwa = z.Field<string>("Nazwa"),
+                               Stan = z.Field<string>("Stan_techniczny"),
+                               Opis = z.Field<string>("Opis"),
+                               Kategoria = z.Field<string>("Kategoria"),
+                               Czywypozyczalny = z.Field<bool>("Czy_wypozyczalny"),
+                               Czywypozyczony = z.Field<bool>("Status_wypozyczenia")
+
+                           };
+
+            dgsprzet.ItemsSource = wszystko;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Activated(object sender, EventArgs e)
         {
-            List<Sprzet> sprzeet = new List<Sprzet>();//lista do datagrid
-            sprzeet.Add(new Sprzet() { Id = 1, Nazwa = "Laptop Andrzeja", Opis = "Szybki", Stan = "Sprawny", Czywypozyczalny = "tak", Czywypozyczony = "nie",Kategoria="Laptop" });
-            
-           
-            dgsprzet.ItemsSource = sprzeet;//datagrid
+            ds.Tables["Zasoby"].Clear();
+            odswiez();
         }
     }
 }

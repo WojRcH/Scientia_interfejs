@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scientia_interfejs_alpha"
         mc:Ignorable="d"        
-        Title="Ewidencja Scientia Ingenium" WindowStartupLocation="CenterScreen" d:DesignWidth="996.5" d:DesignHeight="699" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" Loaded="Window_Loaded">
+        Title="Ewidencja Scientia Ingenium" WindowStartupLocation="CenterScreen" d:DesignWidth="996.5" d:DesignHeight="699" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" Loaded="Window_Loaded" Activated="Window_Activated">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -17,31 +17,35 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="112"/>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="111*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="plak" Source="C:\Users\W\source\repos\Scientia_interfejs_alpha\plak.png" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="5" MouseLeftButtonDown="plak_MouseLeftButtonDown" MouseEnter="plak_MouseEnter" MouseLeave="plak_MouseLeave" Stretch="UniformToFill"/>
+        <Image x:Name="plak" Source="image/plak.png" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="5" MouseLeftButtonDown="plak_MouseLeftButtonDown" MouseEnter="plak_MouseEnter" MouseLeave="plak_MouseLeave" Stretch="UniformToFill"/>
         <Button x:Name="BtnPanel" Grid.Column="6" Grid.Row="0" Content="Panel Administracyjny" Click="BtnPanel_Click"/>
         <Button x:Name="BtnO" Grid.Column="5" Grid.Row="0" Content="O programie" Click="BtnO_Click"/>
         <Label x:Name="Lblkom" Content="W celu wypożyczenia sprzętu przejdź do panelu administracyjnego" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="5" HorizontalContentAlignment="Right"  VerticalContentAlignment="Bottom" Height="30" VerticalAlignment="Bottom" MouseEnter="Lblkom_MouseEnter" MouseLeave="Lblkom_MouseLeave"/>
-        <Label x:Name="Lblopis" Content="Witaj w programie ewidencyjnym koła naukowego Scientia Ingenium!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4"/>
-        <ComboBox x:Name="CBfiltr" Height="30" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="CBfiltr_SelectionChanged">
-            <ComboBoxItem>Komórka</ComboBoxItem>
-            <ComboBoxItem>Telefon</ComboBoxItem>
+        <Label x:Name="Lblopis" Content="Witaj w programie ewidencyjnym koła naukowego Scientia Ingenium!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <ComboBox x:Name="CBfiltr" Grid.Column="0" Grid.Row="0" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="CBfiltr_SelectionChanged" Margin="0,81,0,0" >
+            <ComboBoxItem>wszystko</ComboBoxItem>
+            <ComboBoxItem>Laptopy i tablety</ComboBoxItem>
+            <ComboBoxItem>PC stacjonarny</ComboBoxItem>
+            <ComboBoxItem>Telefony</ComboBoxItem>
+            <ComboBoxItem>Smartwatche</ComboBoxItem>
+            <ComboBoxItem>inne</ComboBoxItem>
         </ComboBox>
-        <Label x:Name="lblfiltr" Content="Filtruj wg. kategorii" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0,20,30"/>
+        <Label x:Name="lblfiltr" Grid.Column="0" Grid.Row="0" Content="Filtruj wg. kategorii" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0,20,30"/>
         <DataGrid Name="dgsprzet" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" IsReadOnly="True" SelectionMode="Single" Background="Gainsboro">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="200" Header="Sprzęt" Binding="{Binding Nazwa}" />
-                <DataGridTextColumn Width="200" Header="Kategoria" Binding="{Binding Kategoria}" />
-                <DataGridTextColumn Width="200" Header="Opis sprzętu" Binding="{Binding Opis}" />
-                <DataGridTextColumn Width="200" Header="Stan techniczny" Binding="{Binding Stan}" />
-                <DataGridTextColumn Width="200" Header="Czy do wypożyczania" Binding="{Binding Czywypozyczalny}" />
-                <DataGridTextColumn Width="200" Header="Stan wypożyczenia" Binding="{Binding Czywypozyczony}" />
+                <DataGridTextColumn Width="200*" Header="Sprzęt" Binding="{Binding Nazwa}" />
+                <DataGridTextColumn Width="200*" Header="Kategoria" Binding="{Binding Kategoria}" />
+                <DataGridTextColumn Width="200*" Header="Opis sprzętu" Binding="{Binding Opis}" />
+                <DataGridTextColumn Width="200*" Header="Stan techniczny" Binding="{Binding Stan}" />
+                <DataGridCheckBoxColumn Width="200*" Header="Czy do wypożyczania" Binding="{Binding Czywypozyczalny}" />
+                <DataGridCheckBoxColumn Width="200*" Header="Stan wypożyczenia" Binding="{Binding Czywypozyczony}" />
                 <!--<DataGridTemplateColumn Header="Zdjęcie" Width="SizeToCells">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -50,9 +54,9 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>-->
             </DataGrid.Columns>
-           <!-- <DataGrid.RowDetailsTemplate>
+             <!--<DataGrid.RowDetailsTemplate>
                 <DataTemplate>
-                    <Image x:Name="imgzdj" Source="C:\Users\W\source\repos\Scientia_interfejs_alpha\knsi.png" HorizontalAlignment="Left" />
+                    <Image x:Name="imgzdj" Source="image\knsi.png" HorizontalAlignment="Left" Height="100" Width="100" />
                 </DataTemplate>
             </DataGrid.RowDetailsTemplate> -->
         </DataGrid>

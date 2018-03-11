@@ -30,7 +30,7 @@
         <Label Grid.Column="1" Grid.Row="3" Content="Hasło:" HorizontalContentAlignment="Center"/>
         <Label Grid.ColumnSpan="4" Grid.Row="0" Content="Panel Administracyjny Wypożyczeń" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <Button x:Name="btnzaloguj" Grid.Column="3" Grid.Row="5" Content="ZALOGUJ" Click="Btnzaloguj_Click"/>
-        <Image x:Name="image" Source="C:\Users\W\source\repos\Scientia_interfejs_alpha\knsi.png" Grid.Row="0" HorizontalAlignment="Center" Height="80" Margin="20,10,63,10" Width="129" Grid.ColumnSpan="2" Opacity="0.2" Stretch="Fill" />
+        <Image x:Name="image" Source="image/knsi.png" Grid.Row="0" HorizontalAlignment="Center" Height="80" Margin="20,10,63,10" Width="129" Grid.ColumnSpan="2" Opacity="0.2" Stretch="Fill" />
         <Button x:Name="btnkontakt" Grid.Column="1" Grid.Row="7" Content="Kontakt" Height="20" VerticalAlignment="Bottom" Click="btnkontakt_Click"/>
         <Button x:Name="btnwroc" Grid.Column="0" Grid.Row="7" Content="Wróć do przeglądania" Height="20" VerticalAlignment="Top" Click="btnwroc_Click" />
         

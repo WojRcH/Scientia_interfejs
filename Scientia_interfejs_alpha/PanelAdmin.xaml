@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scientia_interfejs_alpha"
         mc:Ignorable="d"
-        Title="PanelAdmin" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" d:DesignWidth="1255.5" d:DesignHeight="718">
+        Title="PanelAdmin" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None" d:DesignWidth="1255.5" d:DesignHeight="718" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -20,18 +20,18 @@
                 </Menu.ItemsPanel>
                 <MenuItem Header="Opcje Administracyjne">
                     <MenuItem x:Name="MIedytczlo" Header="Edytuj Członków" Click="MIedytczlo_Click"/>
-                    <MenuItem x:Name="MIedytzaso" Header="Edytuj Zasoby" Click="MIedytzaso_Click"/>                                      
+                    <MenuItem x:Name="MIedytzaso" Header="Edytuj Zasoby" Click="MIedytzaso_Click"/>
                 </MenuItem>
                 <MenuItem Header="Wyloguj" HorizontalAlignment="Right">
                     <MenuItem x:Name="MIzamk" Header="Zamknij program"  Click="MenuItem_Zamk">
                         <MenuItem.Icon>
-                            <Image Source="C:\Users\W\source\repos\Scientia_interfejs_alpha\close.png" Width="20"/>
+                            <Image Source="image/close.png" Width="20"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator/>
                     <MenuItem x:Name="MIwroc" Click="MenuItem_Wroc" Header="Wróć do przeglądania">
                         <MenuItem.Icon>
-                            <Image Source="C:\Users\W\source\repos\Scientia_interfejs_alpha\back.png" Width="20"/>
+                            <Image Source="image/back.png" Width="20"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
@@ -50,53 +50,54 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="74*"/>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="104*"/>
+                        <ColumnDefinition Width="104*"/>
+                        <ColumnDefinition Width="104*"/>
+                        <ColumnDefinition Width="104*"/>
+                        <ColumnDefinition Width="103*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Name="dgsprzet" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="7" IsReadOnly="True" SelectionMode="Single">
+                    <DataGrid x:Name="dgsprzet" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="7" IsReadOnly="True" SelectionMode="Single" SelectedValue="{Binding ID_zasobu}" SelectedValuePath="ID_zasobu" MouseLeftButtonUp="dgsprzet_MouseLeftButtonUp" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="200" Header="Sprzęt" Binding="{Binding Nazwa}" />
-                            <DataGridTextColumn Width="200" Header="Kategoria" Binding="{Binding Kategoria}" />
-                            <DataGridTextColumn Width="200" Header="Opis sprzętu" Binding="{Binding Opis}" />
-                            <DataGridTextColumn Width="200" Header="Stan techniczny" Binding="{Binding Stan}" />
-                            <DataGridTextColumn Width="200" Header="Czy wypożyczalny" Binding="{Binding Czywypozyczalny}" />
-                            <DataGridTextColumn Width="200" Header="Stan wypożyczenia" Binding="{Binding Czywypozyczony}" />
-                            <DataGridTextColumn Width="150" Header="Data Wypożyczenia" Binding="{Binding Data_wyp}" />
-                            <DataGridTextColumn Width="150" Header="Data Zwrotu" Binding="{Binding Data_zwr}" />
-                            <DataGridTextColumn Width="200" Header="Przez Kogo?" Binding="{Binding Kto}" />
+                            <DataGridTextColumn Width="150*" Header="Sprzęt" Binding="{Binding Nazwa}" />
+                            <DataGridTextColumn Width="150*" Header="Kategoria" Binding="{Binding Kategoria}" />
+                            <DataGridTextColumn Width="200*" Header="Opis sprzętu" Binding="{Binding Opis}" />
+                            <DataGridTextColumn Width="100*" Header="Stan techniczny" Binding="{Binding Stan_techniczny}" />
+                            <DataGridCheckBoxColumn  Width="100*" Header="Czy wypożyczalny" Binding="{Binding Czy_wypozyczalny}" />
+                            <DataGridCheckBoxColumn  Width="100*" Header="Stan wypożyczenia"  Binding="{Binding Status_wypozyczenia}" />
+                            <DataGridTextColumn Width="100*" Header="Data Wypożyczenia" Binding="{Binding Data_wypozyczenia}" />
+                            <DataGridTextColumn Width="100*" Header="Data Zwrotu" Binding="{Binding Data_zwrot}" />
+                            <DataGridTextColumn Width="100*" Header="Przez Kogo?" Binding="{Binding Kto}" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <StackPanel Grid.Column="5" Grid.Row="3" Margin="10">
+                    <StackPanel Grid.Column="6" Grid.Row="3" Margin="10">
                         <RadioButton x:Name="RBczl" GroupName="RBkto" Checked="RadioButton_Checked"/>
                         <Label Content="Członek koła"/>
                         <RadioButton x:Name="RBgosc" GroupName="RBkto" Checked="RadioButton_Checked_1"/>
                         <Label Content="Gość"/>
                     </StackPanel>
-                    <StackPanel x:Name="SPdane" Grid.Column="5" Grid.Row="4" Visibility="Hidden">
+                    <StackPanel x:Name="SPdane" Grid.Column="6" Grid.Row="4" Visibility="Hidden">
                         <TextBox x:Name="txtboximie" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,5,0,5"/>
                         <TextBox x:Name="txtboxnazwisko" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,5"/>
                         <TextBox x:Name="txtboxnumer" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     </StackPanel>
-                            <ComboBox x:Name="CBkto" Grid.Column="5" Grid.Row="4" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" IsEditable="True" Visibility="Hidden">
-                        
+                    <ComboBox x:Name="CBkto" Grid.Column="6" Grid.Row="4" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" IsEditable="True" Visibility="Hidden" SelectedValuePath="id" DisplayMemberPath="dane" >
+
                     </ComboBox>
-                    <DatePicker x:Name="DPdzis" Grid.Column="5" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"/>
-                    <DatePicker x:Name="DPdokiedy" Grid.Column="5" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Row="2"/>
-                    <Label x:Name="lbldzisiaj" Content="Data dzisiejsza" Grid.Column="4" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" />
-                    <Label x:Name="lblkom" Content="Podaj osobę wypożyczającą" Grid.Column="4" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Top"/>
-                    <StackPanel x:Name="SPlbl" Grid.Column="4" Grid.Row="4" Visibility="Hidden">
+                    <DatePicker x:Name="DPdzis" Grid.Column="6" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"/>
+                    <DatePicker x:Name="DPdokiedy" Grid.Column="6" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Row="2"/>
+                    <Label x:Name="lbldzisiaj" Content="Data dzisiejsza" Grid.Column="5" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" />
+                    <Label x:Name="lblkom" Content="Podaj osobę wypożyczającą" Grid.Column="5" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Top"/>
+                    <StackPanel x:Name="SPlbl" Grid.Column="5" Grid.Row="4" Visibility="Hidden">
                         <Label x:Name="lblimie" Content="Podaj imię osoby wypożyczającej" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                         <Label x:Name="lblnazw" Content="Podaj nazwisko osoby wypożyczającej" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                         <Label x:Name="lblnumer" Content="Podaj numer telefonu osoby wypożyczającej" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                     </StackPanel>
-                    <Label x:Name="lblkto2" Content="Wybierz imię i nazwisko członka" Grid.Column="4" HorizontalAlignment="Right"  Grid.Row="4" VerticalAlignment="Top" Visibility="Hidden"/>
-                    <Label x:Name="lblwybierz" Content="Wybierz datę zwrotu" Grid.Column="4" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Top" />
-                    <Button x:Name="btnwypozycz" Content="Wypożycz" Grid.Column="5" Grid.Row="6"/>
-                    <Button x:Name="btnoddaj" Content="Oddaj" Grid.Column="4" Grid.Row="6"/>
+                    <Label x:Name="lblkto2" Content="Wybierz imię i nazwisko członka" Grid.Column="5" HorizontalAlignment="Right"  Grid.Row="4" VerticalAlignment="Top" Visibility="Hidden"/>
+                    <Label x:Name="lblwybierz" Content="Wybierz datę zwrotu" Grid.Column="5" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Top" />
+                    <Button x:Name="btnwypozycz" Content="Wypożycz" Grid.Column="6" Grid.Row="6" Click="btnwypozycz_Click"/>
+                    <Button x:Name="btnoddaj" Content="Oddaj" Grid.Column="5" Grid.Row="6" Click="btnoddaj_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Przeglądaj wypożyczenia">
@@ -106,10 +107,19 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <DataGrid x:Name="DGprzeglad">
-
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="200" Header="Sprzęt" Binding="{Binding Nazwa}" />
+                            <DataGridTextColumn Width="200" Header="Kategoria" Binding="{Binding Kategoria}" />
+                            <DataGridTextColumn Width="200" Header="Stan techniczny" Binding="{Binding Stan_techniczny}" />
+                            <DataGridCheckBoxColumn  Width="200" Header="Czy wypożyczalny" Binding="{Binding Czy_wypozyczalny}" />
+                            <DataGridCheckBoxColumn  Width="200" Header="Stan wypożyczenia"  Binding="{Binding Status_wypozyczenia}" />
+                            <DataGridTextColumn Width="150" Header="Data Zwrotu" Binding="{Binding Data_zwrot}" />
+                            <DataGridTextColumn Width="200" Header="Przez Kogo?" Binding="{Binding Kto}" />
+                        </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
-            </TabItem>            
+            </TabItem>
         </TabControl>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="282,-53,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
